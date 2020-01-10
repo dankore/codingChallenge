@@ -1,3 +1,5 @@
+[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/access-publishing/codingChallenge) 
+
 ## Instructions
 1) You are given a JSON file with an array of Objects. Every element can be grouped together using the "type" property.
 2) Your job is to import the data and arrange them in a way that the elements are evenly distributed.
