@@ -1,46 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Coding Challenge</title>
-    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="src/style.css" />
-  </head>
-  <body>
-    <header class="header-bar mb-3">
-      <div
-        class="container d-flex flex-column flex-md-row align-items-center p-3"
-      >
-        <h4 class="">
-          Coding Challenge
-        </h4>
-      </div>
-    </header>
-    <!-- header ends here -->
-    <div class="bg-gray-300">
-    <div class="flex flex-wrap w-full sm:w-md lg:w-3/4 p-2 m-auto">
-      <% data.set.map( dataSet=> { %> 
-        <div class="w-64 p-2 m-3 bg-white mx-auto border rounded shadow-m">
-              <div class="">
-                <p class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
-                    <%= dataSet.id %>
-                </p>
-                <div class="font-bold text-xl mb-2"><%= dataSet.type %></div>
-                <p class=""><%= dataSet.description %></p>
-              </div>
-              <p class=""><%= dataSet.company %></p>
-        </div>     
-    <% }) %>
-  </div>
+<%- include('includes/header') %> <!-- header -->
+ <div class="flex justify-center">
+    <button id="typeA" class="typeA mr-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">typeA</button>
+    <button id="typeB" class="typeA mr-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">typeB</button>
+    <button id="typeC" class="typeA mr-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">typeC</button>
+    <button id="typeD" class="typeA mr-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">typeD</button>
+    <button id="typeE" class="typeA mr-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">typeE</button>
+    <button id="typeF" class="typeA bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">typeF</button>
+ </div>
+<div id ="contents" class="m-3 flex flex-wrap bg-gray-300">
+    
 </div>
     <!-- footer begins -->
-    <footer class="border-top text-center small text-muted py-3">
-      <p class="m-0">
-        Copyright &copy; 2020 <a href="/" class="text-muted">Coding Challenge</a>. All
-        rights reserved.
-      </p>
-    </footer>
-  </body>
-</html>
+<%- include('includes/footer') %> <!-- footer -->

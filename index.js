@@ -1,5 +1,5 @@
 const express = require("express");
-const fetch = require("node-fetch");
+const router = require('./router')
 const bodyParser = require("body-parser");
 var app = express();
 var port;
@@ -17,21 +17,9 @@ if (port == null || port === "") {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// This route processes GET requests to "/"`
-app.get("/", function(req, res) {
-  var url = "https://dankore.github.io/JSONCodingChallenge/elements";
+app.use('/', router)
 
-  fetch(url)
-    .then(res => res.json())
-    .then(data => {
-      res.render("index", { data });
-    })
-    .catch(err => {
-      res.send(err);
-    });
-});
-
-// Listen on port 8080
-var listener = app.listen(8080, function() {
+var listener = app.listen(port, function() {
   console.log("Listening on port " + listener.address().port);
 });
+
