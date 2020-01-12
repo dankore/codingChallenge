@@ -1,7 +1,7 @@
 {
   "name": "coding_challenge",
   "version": "1.0.0",
-  "description": "coding challenge",
+  "description": "coding challenge by access publishing",
   "main": "index.js",
   "scripts": {
     "watch": "start nodemon index && start webpack --watch",
