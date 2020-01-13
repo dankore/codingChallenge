@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "watch": "start nodemon index && start webpack --watch",
-    "start": "nodemon index & webpack --watch"
+    "start": "nodemon index & webpack --watch",
+    "build": "webpack"
   },
   "dependencies": {
     "axios": "^0.19.1",

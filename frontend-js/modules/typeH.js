@@ -14,16 +14,35 @@ export default class TypeH {
     this.btn.addEventListener("click", () => this.injectData());
   }
   // 3. Methods
-  injectData() {
+   injectData() {
     axios
       .get("https://dankore.github.io/JSONCodingChallenge/elements")
       .then(response => {
-        const data = response.data.filter(x => x).sort((a, b) => a.id - b.id);
+        const data = this.sattoShuffle(response.data);
         this.renderResultHTML(data);
       })
       .catch(() => {
         alert("Hello the request failed.");
       });
+  }
+
+  sattoShuffle(array) {
+    var m = array.length,
+      t,
+      i;
+
+    // While there remain elements to shuffle…
+    while (m) {
+      // Pick a remaining element…
+      i = Math.floor(Math.random() * m--);
+
+      // And swap it with the current element.
+      t = array[m];
+      array[m] = array[i];
+      array[i] = t;
+    }
+
+    return array;
   }
 
    renderResultHTML(dataSet) {

@@ -18,9 +18,7 @@ export default class TypeB {
     axios
       .get("https://dankore.github.io/JSONCodingChallenge/elements")
       .then(response => {
-        const data = response.data
-          .filter(x => x)
-          .sort((a, b) => a.id - b.id);
+        const data = this.sattoShuffle(response.data);
         this.renderResultHTML(data);
       })
       .catch(() => {
@@ -28,11 +26,29 @@ export default class TypeB {
       });
   }
 
-   renderResultHTML(dataSet) {
+  sattoShuffle(array) {
+    var m = array.length,
+      t,
+      i;
+
+    // While there remain elements to shuffle…
+    while (m) {
+      // Pick a remaining element…
+      i = Math.floor(Math.random() * m--);
+
+      // And swap it with the current element.
+      t = array[m];
+      array[m] = array[i];
+      array[i] = t;
+    }
+
+    return array;
+  }
+  renderResultHTML(dataSet) {
     this.resultsArea.innerHTML = `${dataSet
       .map(object => {
         if (object.type == "typeB") {
-         return `
+          return `
             <div class="text-sm bg-blue-500 rounded-full shadow-lg m-1 p-1 text-white">
               <p>${object.type}</p>
             </div>

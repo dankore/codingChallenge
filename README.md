@@ -49,4 +49,7 @@
  * Start development server: `npm run watch`
  * Open Chrome or Firefox to [http://localhost:8080](http://localhost:8080)
    * As you edit code, the browser will automatically refresh.
+
+### Algorithm used
+  * SattoloShuffle from [Source](https://bost.ocks.org/mike/shuffle/)
    
