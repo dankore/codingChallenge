@@ -32,14 +32,14 @@ export default class TypeB {
     this.resultsArea.innerHTML = `${dataSet
       .map(object => {
         if (object.type == "typeB") {
-          return `
-            <div class="text-l font-bold bg-blue-500 rounded-full shadow-lg m-2 p-2 text-white">
+         return `
+            <div class="text-sm bg-blue-500 rounded-full shadow-lg m-1 p-1 text-white">
               <p>${object.type}</p>
             </div>
           `;
         } else {
           return `
-            <div class="text-l font-semibold text-blue-400 rounded-full shadow-lg m-2 p-2 bg-white">
+            <div class="text-sm text-blue-400 rounded-full shadow-lg m-1 p-1 bg-white">
               <p>${object.type}</p>
             </div>
               `;

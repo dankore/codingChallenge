@@ -30,7 +30,7 @@ export default class allTypes {
     this.resultsArea.innerHTML = `${dataSet
       .map(object => {
         return `
-          <div class="text-l font-semibold text-blue-400 rounded-full shadow-lg m-2 p-2 bg-white">
+          <div class="text-sm text-blue-400 rounded-full shadow-lg m-1 p-1 bg-white">
             <p>${object.type}</p>
           </div>
             `;

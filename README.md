@@ -28,7 +28,7 @@
  * JSON file hosted on Github server [JSON File](https://github.com/dankore/JSONCodingChallenge)
 
 ## Frontend ##
- * Embedded JavaScript template (EJS) - Pure JavaScript that renders HTML. 75% file saving compared to React!. 
+ * Embedded JavaScript template (EJS) - Pure JavaScript that renders HTML. 75% file saving compared to React! 
  * Tailwind - CSS Utility library.
 
 # HOW TO RUN THIS PROJECT
