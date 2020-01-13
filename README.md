@@ -24,9 +24,6 @@
 2. Output images do not necessarily represent even distribution
 
 ## Instructions To Test The App
-
-# README #
-
 ## Backend ##
  * JSON file hosted on Github server [JSON File](https://github.com/dankore/JSONCodingChallenge)
 
@@ -34,7 +31,7 @@
  * Embedded JavaScript template (EJS) - Pure JavaScript that renders HTML. 75% file saving compared to React!. 
  * Tailwind - CSS Utility library.
 
-# HOW TO RUN FRONTEND BY ITSELF
+# HOW TO RUN THIS PROJECT
 ### Prerequisite software:
  * [Git](https://git-scm.com/downloads)
  * Visual Studio Code or any other IDE
