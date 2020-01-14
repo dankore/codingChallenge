@@ -69,7 +69,7 @@ export default class TypeA {
           `;
         } else {
           return `
-            <div class="text-sm text-blue-400 rounded-full shadow-lg shadow-inner m-1 p-1 bg-white">
+            <div class="text-sm text-blue-400 rounded-full shadow-lg m-1 p-1 bg-white">
               <p>${object}</p>
             </div>
               `;
