@@ -18,7 +18,7 @@ export default class TypeE {
     axios
       .get("https://dankore.github.io/JSONCodingChallenge/elements")
       .then(response => {
-        const data = this.sattoShuffle(response.data);
+        const data = this.sattoloShuffle(response.data);
         this.renderResultHTML(data);
       })
       .catch(() => {
@@ -26,7 +26,7 @@ export default class TypeE {
       });
   }
 
-  sattoShuffle(array) {
+  sattoloShuffle(array) {
     var m = array.length,
       t,
       i;
