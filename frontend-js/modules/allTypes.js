@@ -17,7 +17,8 @@ export default class allTypes {
     axios
       .get("https://dankore.github.io/JSONCodingChallenge/elements")
       .then(response => {
-        const data = this.sattoloShuffle(response.data);
+        const onlyTypes = response.data.map(x => x.type);
+        const data = this.distributeEvely_And_Shuffle(onlyTypes);
         this.renderResultHTML(data);
       })
       .catch(() => {
@@ -25,10 +26,23 @@ export default class allTypes {
       });
   }
 
-  sattoloShuffle(array) {
+  distributeEvely_And_Shuffle(array) {
     var m = array.length,
       t,
       i;
+    // DISTRIBUTE ARRAY EVENLY
+    const uniqueTypes = [...new Set(array)];
+
+    const arrayOfTypes = uniqueTypes.map(outer =>
+      array.filter(inner => outer === inner)
+    );
+
+    array
+      .map((_, idx) => arrayOfTypes.map(el => el[idx]))
+      .reduce((a, b) => a.concat(b))
+      .filter(_ => _);
+
+    // SHUFFLE ARRAY
 
     // While there remain elements to shuffle…
     while (m) {
@@ -40,7 +54,6 @@ export default class allTypes {
       array[m] = array[i];
       array[i] = t;
     }
-
     return array;
   }
 
@@ -50,7 +63,7 @@ export default class allTypes {
       .map(object => {
         return `
           <div class="text-sm text-blue-400 rounded-full shadow-lg m-1 p-1 bg-white">
-            <p>${object.type}</p>
+            <p>${object}</p>
           </div>
             `;
       })

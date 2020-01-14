@@ -14,11 +14,12 @@ export default class TypeG {
     this.btn.addEventListener("click", () => this.injectData());
   }
   // 3. Methods
-   injectData() {
+  injectData() {
     axios
       .get("https://dankore.github.io/JSONCodingChallenge/elements")
       .then(response => {
-        const data = this.sattoloShuffle(response.data);
+        const onlyTypes = response.data.map(x => x.type);
+        const data = this.distributeEvely_And_Shuffle(onlyTypes);
         this.renderResultHTML(data);
       })
       .catch(() => {
@@ -26,10 +27,23 @@ export default class TypeG {
       });
   }
 
-  sattoloShuffle(array) {
+  distributeEvely_And_Shuffle(array) {
     var m = array.length,
       t,
       i;
+    // DISTRIBUTE ARRAY EVENLY
+    const uniqueTypes = [...new Set(array)];
+
+    const arrayOfTypes = uniqueTypes.map(outer =>
+      array.filter(inner => outer === inner)
+    );
+
+    array
+      .map((_, idx) => arrayOfTypes.map(el => el[idx]))
+      .reduce((a, b) => a.concat(b))
+      .filter(_ => _);
+
+    // SHUFFLE ARRAY
 
     // While there remain elements to shuffle…
     while (m) {
@@ -41,22 +55,21 @@ export default class TypeG {
       array[m] = array[i];
       array[i] = t;
     }
-
     return array;
   }
-   renderResultHTML(dataSet) {
+  renderResultHTML(dataSet) {
     this.resultsArea.innerHTML = `${dataSet
       .map(object => {
-        if (object.type == "typeG") {
+        if (object == "typeG") {
           return `
             <div class="text-sm bg-blue-500 rounded-full shadow-lg m-1 p-1 text-white">
-              <p>${object.type}</p>
+              <p>${object}</p>
             </div>
           `;
         } else {
           return `
             <div class="text-sm text-blue-400 rounded-full shadow-lg m-1 p-1 bg-white">
-              <p>${object.type}</p>
+              <p>${object}</p>
             </div>
               `;
         }
